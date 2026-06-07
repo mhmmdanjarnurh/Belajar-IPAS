@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi IPAS Lengkap</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="progress-bar" id="reading-progress"></div>
+
+    <nav>
+        <div class="logo">IPAS<span>MATERI</span></div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="materi.html">Materi</a>
+            <a href="latihan.html">Latihan</a>
+        </div>
+    </nav>
+
+    <div class="section" style="margin-top: 80px;">
+        <div class="search-container" style="margin-bottom: 40px; text-align: center;">
+            <input type="text" id="materi-search" placeholder="Cari materi..." style="padding: 15px 30px; width: 80%; border-radius: 50px; border: 1px solid #ddd; outline: none;">
+        </div>
+
+        <div id="materi-list">
+            </div>
+    </div>
+
+    <button id="back-to-top" class="btn btn-primary" style="position: fixed; bottom: 30px; right: 30px; display: none;"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+    <script>
+        // Data Materi Utuh (Hanya Sebagian kecil ditampilkan di sini, sisanya di script.js)
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMateri();
+        });
+    </script>
+</body>
+</html>

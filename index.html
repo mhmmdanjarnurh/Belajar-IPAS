@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPAS Elite | Belajar Masa Depan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="bg-shapes">
+        <div class="shape" style="width: 400px; height: 400px; top: -100px; right: -100px;"></div>
+        <div class="shape" style="width: 300px; height: 300px; bottom: -50px; left: -50px; background: var(--accent);"></div>
+    </div>
+
+    <nav>
+        <div class="logo">IPAS<span style="color: var(--accent);">ELITE</span></div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="materi.html">Materi</a>
+            <a href="latihan.html">Latihan</a>
+            <button id="theme-toggle" style="background:none; border:none; cursor:pointer;"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>BELAJAR IPAS KELAS 10</h1>
+            <p>Ringkasan Materi Energi dan Ilmu Pengetahuan Sosial </p>
+            <div class="hero-btns">
+                <a href="materi.html" class="btn btn-primary">Mulai Belajar</a>
+                <a href="latihan.html" class="btn" style="border: 1px solid var(--primary);">Kerjakan Latihan</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="energy-transformer-section">
+    <div class="globe-mesh-bg">
+        <div class="grid-line lat"></div>
+        <div class="grid-line lon"></div>
+    </div>
+
+    <div class="container-beranda">
+        <div class="section-title-center">
+            <h2>⚡ Kartu Pintar Perubahan Energi</h2>
+            <p>Pilih komponen di bawah untuk melihat bagaimana energi berubah bentuk secara langsung!</p>
+        </div>
+
+        <div class="transformer-box">
+            <div class="transformer-inputs">
+                <label class="input-label">Pilih Alat/Benda Elektronik:</label>
+                <div class="button-grid">
+                    <button class="energy-btn" onclick="transformEnergy('listrik', 'cahaya', 'Kipas Angin', this)">
+                        <span>🌀 Kipas Angin</span>
+                    </button>
+                    <button class="energy-btn" onclick="transformEnergy('listrik', 'cahaya', 'Lampu Listrik', this)">
+                        <span>💡 Lampu Pijar</span>
+                    </button>
+                    <button class="energy-btn" onclick="transformEnergy('listrik', 'panas', 'Setrika', this)">
+                        <span>🔥 Setrika Listrik</span>
+                    </button>
+                    <button class="energy-btn" onclick="transformEnergy('kimia', 'listrik', 'Baterai Senter', this)">
+                        <span>🔋 Baterai Senter</span>
+                    </button>
+                    <button class="energy-btn" onclick="transformEnergy('kimia', 'gerak', 'Mobil Bensin', this)">
+                        <span>🚗 Mobil Bensin</span>
+                    </button>
+                    <button class="energy-btn" onclick="transformEnergy('cahaya', 'listrik', 'Panel Surya', this)">
+                        <span>☀️ Panel Surya</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="transformer-display">
+                <h3 id="device-title">Silakan pilih alat di samping...</h3>
+                <div class="flow-container">
+                    <div class="energy-node" id="node-asal">---</div>
+                    <div class="energy-arrow" id="flow-arrow">➔</div>
+                    <div class="energy-node" id="node-hasil">---</div>
+                </div>
+                <p id="transform-explanation" class="transform-desc">Klik salah satu tombol alat untuk mensimulasikan hukum kekekalan energi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-bolt"></i>
+                <h3>Energi</h3>
+                <p>Pelajari bagaimana energi menggerakkan semesta kita.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-leaf"></i>
+                <h3>Lingkungan</h3>
+                <p>Menjaga ekosistem demi keberlangsungan hidup.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-globe-asia"></i>
+                <h3>Geografi</h3>
+                <p>Eksplorasi posisi strategis nusantara di mata dunia.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-handshake"></i>
+                <h3>Kerja Sama</h3>
+                <p>Kolaborasi internasional dalam PBB & ASEAN.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: rgba(0,102,255,0.02);">
+        <div class="grid" style="text-align: center;">
+            <div class="stat-item">
+                <h2 class="counter" data-target="40">0</h2>
+                <p>Materi</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="100">0</h2>
+                <p>Interaktif</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="40">0</h2>
+                <p>Latihan Soal</p>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 50px 10%; background: var(--white); text-align: center;">
+        <p>&copy; 2026 IPAS Elite Learning. Designed for Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

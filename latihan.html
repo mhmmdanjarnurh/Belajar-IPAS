@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal IPAS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">IPAS<span>LATIHAN</span></div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="materi.html">Materi</a>
+            <a href="latihan.html">Latihan</a>
+        </div>
+    </nav>
+
+    <div class="section" style="margin-top: 80px;">
+        <div class="quiz-container">
+            <div id="quiz-header">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                    <span id="question-count">Soal 1/40</span>
+                    <span id="timer"><i class="fas fa-clock"></i> 00:00</span>
+                </div>
+                <div class="progress-track" style="height: 8px; background: #eee; border-radius: 10px; margin-bottom: 30px;">
+                    <div id="quiz-progress" style="height: 100%; background: var(--primary); width: 0%; border-radius: 10px;"></div>
+                </div>
+            </div>
+
+            <div id="quiz-body">
+                <h3 id="question-text">Memuat soal...</h3>
+                <div id="options-container" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="quiz-popup">
+        <div class="popup-content">
+            <h2 id="popup-title">✅ Jawaban Benar!</h2>
+            <p id="popup-desc" style="margin: 20px 0; color: var(--text-muted);"></p>
+            <button class="btn btn-primary" onclick="nextQuestion()">Lanjutkan</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="score-screen">
+        <div class="popup-content" style="max-width: 600px;">
+            <h1>Hasil Latihan</h1>
+            <div style="margin: 30px 0; font-size: 1.5rem;">
+                <p>Benar: <span id="final-correct" style="color: #22c55e;">0</span></p>
+                <p>Salah: <span id="final-wrong" style="color: #ef4444;">0</span></p>
+                <h2 id="final-percent" style="font-size: 3rem; margin: 10px 0;">0%</h2>
+                <p id="final-category" style="font-weight: 700;"></p>
+            </div>
+            <button class="btn btn-primary" onclick="location.reload()">Ulangi Latihan</button>
+            <button class="btn" onclick="location.href='index.html'">Kembali ke Beranda</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
