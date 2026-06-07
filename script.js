@@ -1263,3 +1263,25 @@ function transformEnergy(asal, hasil, namaAlat, element) {
         explanation.innerHTML = "<strong>Prinsip Kerja:</strong> Sel fotovoltaik menangkap radiasi gelombang foton <strong>Energi Cahaya Matahari</strong>, memicu pergerakan elektron semikonduktor menghasilkan aliran bersih <strong>Energi Listrik</strong>.";
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const mobileBtn = document.getElementById('menu-mobile-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (mobileBtn && navMenu) {
+        mobileBtn.addEventListener('click', function() {
+            // Membuka / menutup laci menu
+            navMenu.classList.toggle('mobile-active');
+            
+            // Animasi mengubah ikon dari garis tiga (bars) menjadi silang (x)
+            const icon = mobileBtn.querySelector('i');
+            if (navMenu.classList.contains('mobile-active')) {
+                icon.className = 'fas fa-times';
+                mobileBtn.style.transform = 'rotate(90deg)';
+            } else {
+                icon.className = 'fas fa-bars';
+                mobileBtn.style.transform = 'rotate(0deg)';
+            }
+        });
+    }
+});
