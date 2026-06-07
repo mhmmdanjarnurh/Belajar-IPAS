@@ -1264,16 +1264,19 @@ function transformEnergy(asal, hasil, namaAlat, element) {
     }
 }
 
+// --- LOGIKA PEMICU KLIK TOMBOL HAMBURGER DI HP ---
 document.addEventListener("DOMContentLoaded", function() {
     const mobileBtn = document.getElementById('menu-mobile-btn');
     const navMenu = document.getElementById('nav-menu');
 
     if (mobileBtn && navMenu) {
-        mobileBtn.addEventListener('click', function() {
-            // Membuka / menutup laci menu
+        mobileBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Mencegah bentrokan event klik lain
+            
+            // Pasang / lepas kelas pemicu munculnya menu di CSS
             navMenu.classList.toggle('mobile-active');
             
-            // Animasi mengubah ikon dari garis tiga (bars) menjadi silang (x)
+            // Animasi merubah ikon garis tiga menjadi ikon silang (X)
             const icon = mobileBtn.querySelector('i');
             if (navMenu.classList.contains('mobile-active')) {
                 icon.className = 'fas fa-times';
