@@ -526,49 +526,59 @@ nav {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Munculkan hamburger di HP */
+        color: #00f2fe !important; /* Warna ikon terang agar kontras dengan bg gelap */
     }
 
-    /* Mengubah menu teks menjadi laci vertikal yang meluncur dari atas */
+    /* Perbaikan total kotak laci menu di HP */
     .nav-links {
         position: fixed;
-        top: -100vh; /* Awalnya bersembunyi di atas layar */
+        top: -100vh; /* Sembunyi di atas sebelum diklik */
         left: 0;
         width: 100%;
         height: auto;
-        background: #ffffff; /* Latar belakang putih bersih */
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        padding: 80px 0 30px 0;
-        display: flex;
+        background: #1e293b !important; /* Diubah ke warna gelap solid agar menyatu dengan tema */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        padding: 90px 0 30px 0;
+        display: flex !important; /* Memaksa menu menyusun ke bawah */
         flex-direction: column;
         align-items: center;
         gap: 25px;
         transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
+        z-index: 999 !important; /* Naikkan layer agar berada di paling depan teks hero */
     }
 
-    /* KUNCI UTAMA: Ketika menu aktif, tarik lacinya turun ke posisi top: 0 */
+    /* Ketika aktif, pancing laci menu turun ke posisi pas di bawah navbar */
     .nav-links.mobile-active {
         top: 0 !important;
     }
 
-    /* Pengaturan teks link menu di dalam HP */
+    /* Warna teks menu di dalam HP agar menyala dan kelihatan jelas */
     .nav-links a {
-        font-size: 1.3rem;
-        color: #334155;
+        font-size: 1.4rem !important;
+        color: #ffffff !important; /* Teks warna putih solid */
         width: 100%;
         text-align: center;
         padding: 12px 0;
         text-decoration: none;
         display: block;
         font-weight: 600;
+        letter-spacing: 1px;
     }
     
+    /* Efek saat teks menu disentuh jari */
     .nav-links a:hover {
-        color: #0066ff;
-        background-color: #f1f5f9;
+        color: #00f2fe !important; /* Berubah jadi biru terang menyala */
+        background-color: rgba(255, 255, 255, 0.05);
     }
 
-    /* Mengecilkan ukuran tulisan hero utama di HP agar tidak patah berantakan */
+    /* Menyesuaikan tombol tema dark/light di HP */
+    #theme-toggle {
+        color: #ffffff !important;
+        font-size: 1.3rem;
+        padding: 10px;
+    }
+    
+    /* Supaya teks utama tidak tertabrak laci menu */
     .hero-content h1 {
         font-size: 2.2rem !important;
     }
