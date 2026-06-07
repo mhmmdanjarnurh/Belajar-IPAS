@@ -507,3 +507,58 @@ nav {
 }
 
 .transform-desc { color: #94a3b8; font-size: 0.95rem; line-height: 1.5; }
+
+/* --- PENGATURAN RESPONSIF LAYAR HP (MOBILE NAV) --- */
+
+/* Sembunyikan tombol hamburger di layar laptop/komputer */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+/* Ketika layar berukuran maksimal 768px (Ukuran HP & Tablet) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Munculkan tombol hamburger */
+    }
+
+    /* Mengubah menu teks menjadi laci vertikal dari atas */
+    .nav-links {
+        position: fixed;
+        top: -100%; /* Sembunyi di atas layar sebelum diklik */
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98); /* Latar belakang putih semi transparan */
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        padding: 80px 0 30px 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+    }
+
+    /* Ketika menu aktif (diklik), geser lacinya turun ke bawah */
+    .nav-links.mobile-active {
+        top: 0;
+    }
+
+    /* Ukuran font menu di HP agar lebih mudah ditekan jari */
+    .nav-links a {
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    /* Sesuaikan ukuran font hero utama di HP agar tidak kebesaran */
+    .hero-content h1 {
+        font-size: 2.2rem !important;
+    }
+}
